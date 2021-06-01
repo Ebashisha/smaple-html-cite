@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>polindrome</title>
+    </head>
+  <body>
+
+    <style>
+        input{
+        padding: 20px;
+        }
+
+        input[type=button]{
+            border-radius: 20px;
+            border: solid;
+            cursor: pointer;
+            padding: 9px 10px;
+            margin: 2px 2px;
+        }
+
+        input[type=text]{
+            margin: 4px 0;
+            box-sizing: border-box;
+            border-radius: 4px;
+            border: 2px solid;
+        }
+
+        input[type=text]:focus {
+            background-color:lightskyblue;
+            border: 3px solid #765;
+       }
+
+       body{
+      background-image: url(images/paper_7.jpg); 
+       }
+
+        </style>
+
+
+        <script>
+        function TestFunction() {
+        //Here we are getting the value from the textbox on browser
+        var palindron = document.getElementById('tbox').value; //here we are calling checkingPalindrome() function and passing a string into it
+        var rEsstr = checkingPalindrome(palindron);
+        alert('The input string "'+palindron+'" is "'+rEsstr+'"'); // This will allow a //rectangular box to be popped up on the screen to display result
+               } 
+        function checkingPalindrome(palindron) {
+        var origString;
+        //here we are converting the string into a lowercase string
+        palindron = palindron.toLowerCase();
+        //here we are storing the InputStr in origString for reference
+        origString= palindron;
+        //here we are reversing the entered string
+        palindron = palindron.split(''); //this function will split the input string
+        palindron = palindron.reverse(); //this function will reverse the string
+        palindron = palindron.join(''); //this function will join the reversed string characters
+        var revString = palindron;
+        //here we are checking if both the input string and the reversed string are same
+        //and based on it the string will be declared palindrome or not
+        if(origString == revString){
+                  return 'Palindrome string'; //  this will return "Palindrome" if true //otherwise control will flow to else condition
+         }
+        else {
+              return 'not a Palindrome string';
+            }
+        }
+        </script>
+        <form action="" method="get">
+              <center>
+            <i><h1> Program to find if the number or word is a Palindrome or not<br>using html, css and javascript </h1></i>
+        <br>
+        <br>
+        <p ><input type="text" id="tbox" placeholder="Enter your word here here" />
+        <input type="button" onclick="TestFunction()" value="Click here" /></p>
+        <fieldset>
+            <h3>palindrome is a program the gives the<br> same output even when the word or number<br> is read either from front or from back <br>it
+            also helps us to know the accurateness of a word or number</h3>
+        </fieldset>
+                     </center>
+        </form>
+  </body>
+</html>
